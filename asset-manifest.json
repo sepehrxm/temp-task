@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/temp-task/static/css/main.93dfdadf.css",
+    "main.js": "/temp-task/static/js/main.3e7f6f5d.js",
+    "index.html": "/temp-task/index.html",
+    "main.93dfdadf.css.map": "/temp-task/static/css/main.93dfdadf.css.map",
+    "main.3e7f6f5d.js.map": "/temp-task/static/js/main.3e7f6f5d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93dfdadf.css",
+    "static/js/main.3e7f6f5d.js"
+  ]
+}
