@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import Products from "./Products"
 
-const Main = () => {
+const Main = ({search}) => {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(null)
@@ -32,7 +32,7 @@ const Main = () => {
     },[category])
   return (
     <div>
-        {isLoading ? <h1 id='load'>Loading...</h1> : <Products category={category} setCategory={setCategory} items={items} setItems={setItems} isError={isError}/>}
+        {isLoading ? <h1 id='load'>Loading...</h1> : <Products search={search} category={category} setCategory={setCategory} items={items} setItems={setItems} isError={isError}/>}
     </div>
   )
 }

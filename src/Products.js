@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Products = ({items, setItems,isError, category, setCategory}) => {
+const Products = ({search, items, setItems,isError, category, setCategory}) => {
     const handleCategory = (event) => {
         let newCategory = event.target.value
         setCategory(newCategory)
@@ -28,13 +28,22 @@ const Products = ({items, setItems,isError, category, setCategory}) => {
       </select>
     </div>
     <Container id='container'> 
-        <Row>{items.map((item) => {
+        <Row>{search 
+        ?items.filter((i)=> i.title.toLowerCase().includes(search.toLowerCase())).map((item) => {
             return <Col id='col' md={4} sm={8} key={item.id}>
                 <img src={item.image}/>
                 <p id='title'>{item.title}</p>
                 <p id='desc'>#{item.category}</p>
                 <p id='price'>{item.price}$</p>
             </Col>
+        })
+        :items.map((item) => {
+          return <Col id='col' md={4} sm={8} key={item.id}>
+              <img src={item.image}/>
+              <p id='title'>{item.title}</p>
+              <p id='desc'>#{item.category}</p>
+              <p id='price'>{item.price}$</p>
+          </Col>
         })}</Row>
     </Container>
     </>}
